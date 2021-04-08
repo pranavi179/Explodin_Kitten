@@ -20,15 +20,15 @@ const rootReducer = (state = initialState, action) => {
 		case All.GAME_WON:
 			return { state, result: 'Congratulations ,You won the game' };
 		case All.REMOVE_CARD:
-			return { state, cardArray };
+			return { state, cardArray: [] };
 		case All.DEFUSE_CARD:
-			return { state, defuseCard, res: 'Can use later' };
+			return { state, defuseCard: 0, res: 'Can use later' };
 		case All.EXPLODE_CARD:
-			return { state, cardArray, res: 'Exploded,Game Over' };
+			return { state, cardArray: [], res: 'Exploded,Game Over' };
 		case All.SHUFFLE_CARD:
 			return { state, result: 'Game restart and shuffled' };
 		case All.CAT_CARD:
-			return { state, cardArray, res: 'Remove card and continue playing' };
+			return { state, cardArray: [], res: 'Remove card and continue playing' };
 	}
 };
 export default rootReducer;
